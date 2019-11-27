@@ -1,0 +1,7 @@
+<form #noteForm="ngForm" (ngSubmit)="save(noteForm.value)">
+  <input type="hidden" name="href" [(ngModel)]="note.href">
+  <input placeholder="Note Input" [(ngModel)]="note.text" required name="text" #text>
+  <button type="submit" [disabled]="!noteForm.valid">Save</button>
+  <button (click)="remove(note.href)" *ngIf="note.href" type="button">Delete</button>
+  <a routerLink="/note-list">Cancel</a>
+</form>

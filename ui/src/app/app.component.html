@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<button *ngIf="isAuthenticated" (click)="logout()"> Logout </button>
+<hr/>
+<button *ngIf="isAuthenticated" routerLink="/note-list"> Notes </button>
+
+<router-outlet></router-outlet>
+
+<button *ngIf="isAuthenticated" routerLink="/note-add">Add Note</button>
+<button *ngIf="isAuthenticated" (click)="goBack()">Go Back</button>
